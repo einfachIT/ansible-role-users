@@ -14,19 +14,18 @@ provisioner:
         users:
         - username: testuser
           fullname: test user
-          password: buaepolojoku
-          update_password: on_create
-          ssh_pub_key:
+          ssh_pub_key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
           comment: Test User
           group: testcommon
+          state: present
 
         - username: testadmin
           fullname: test admin
-          password: lepatevaxafo
-          update_password: on_create
-          ssh_pub_key:
+          ssh_pub_key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
           comment: Test Admin User
           group: admins
+          groups: sudo
+          state: present
   config_options:
     defaults:
       remote_tmp: /tmp/.ansible

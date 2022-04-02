@@ -25,11 +25,11 @@
     state: "{{ item.state | default(omit) }}"
   loop: "{{ users }}"
 
-- name: Set authorized key
-  ansible.posix.authorized_key:
-    user: "{{ item.username }}"
-    state: present
-    key: "{{ item.ssh_pub_key }}"
-  when: item.ssh_pub_key is defined
-  loop: "{{ users }}"
+#- name: Set authorized key
+#  ansible.posix.authorized_key:
+#    user: "{{ item.username }}"
+#    state: present
+#    key: "{{ item.ssh_pub_key }}"
+#  when: item.ssh_pub_key is defined
+#  loop: "{{ users }}"
 

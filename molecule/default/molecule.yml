@@ -14,14 +14,14 @@ provisioner:
         users:
         - username: testuser
           fullname: test user
-          ssh_pub_key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+#          ssh_pub_key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
           comment: Test User
           group: testcommon
           state: present
 
         - username: testadmin
           fullname: test admin
-          ssh_pub_key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+#          ssh_pub_key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
           comment: Test Admin User
           group: admins
           groups: sudo

@@ -23,6 +23,7 @@
     group: "{{ item.group | default(omit) }}"
     uid: "{{ item.uid | default(omit) }}"
     state: "{{ item.state | default(omit) }}"
+    skeleton: /etc/skel
   loop: "{{ users }}"
 
 #- name: Set authorized key

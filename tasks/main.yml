@@ -24,6 +24,7 @@
     uid: "{{ item.uid | default(omit) }}"
     state: "{{ item.state | default(omit) }}"
     skeleton: /etc/skel
+    shell: /bin/bash
   loop: "{{ users }}"
 
 #- name: Set authorized key
